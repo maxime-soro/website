@@ -1,0 +1,97 @@
+/*!
+ * Start Bootstrap - Full Width Pics (https://startbootstrap.com/template-overviews/full-width-pics)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-full-width-pics/blob/master/LICENSE)
+ */
+body {
+  padding-top: 56px;
+}
+div{
+  display: inline-block;
+}
+
+.row{
+  padding: 8px;
+}
+
+
+@media screen and (max-width:767px){
+
+.col-6:nth-child(3){
+  display: none;
+}
+.col-4:nth-child(4){
+  display: none;
+}
+
+
+}
+
+.bg-image-full {
+  position: relative;
+  z-index: 1;
+
+  /* transition: 1s; */
+
+}
+.bg-image-full::before{
+  content:"";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: url('https://unsplash.it/1900/1080?image=1076') no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  opacity: .25;
+  filter: grayscale(70%);
+  transition: .5s;
+  /* background:  rgba(0, 0, 0, 0.1); */
+}
+
+.bg-image-full:hover::before{
+  filter: grayscale(0%);
+  opacity: .7;
+}
+
+span.contact-phone{
+ font-size: 10em;
+ display:block;
+ width:140px;
+ height: 100%;
+ margin: 0 auto;
+}
+
+footer, p{
+  font-size: .9em;
+}
+
+
+
+
+.blog .carousel-indicators {
+	left: 0;
+	top: auto;
+    bottom: -40px;
+
+}
+
+.carousel{
+  width:100%;
+}
+
+/* The colour of the indicators */
+.blog .carousel-indicators li {
+    background: #a3a3a3;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+}
+
+.blog .carousel-indicators .active {
+background: #707070;
+}

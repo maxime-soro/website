@@ -1,0 +1,2 @@
+// optional
+		$('.carousel').carousel('pause');
