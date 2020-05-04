@@ -15,8 +15,8 @@ div{
 }
 
 header.bg-image-full{
-  padding-top: 27em !important;
-  padding-bottom: 27em !important;
+  padding-top: 18em !important;
+  padding-bottom: 18em !important;
 }
 
 /* .nav-link::before, .nav-link::after{
@@ -59,7 +59,8 @@ header.bg-image-full{
 
 li.nav-item:hover{
   text-shadow:  0 -4px 15px rgba(255,255,255,0.3);
-    -webkit-transition: 0.4s ease;
+    -webkit-transition: 0.6s ease;
+    color: rgba(255,255,255,.6);
 
 }
 
