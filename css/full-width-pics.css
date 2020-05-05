@@ -32,7 +32,7 @@ header.bg-image-full{
 
 .underbar{
   display: block;
-  position: fixed;
+  position: absolute;
   background: rgba(100,100,200,0);
   height: 0.2em;
   top: 2.4em;
@@ -56,6 +56,9 @@ header.bg-image-full{
     width: 100%;
     left: 0;
 } */
+
+@media screen and (min-width:992px) {
+
 
 li.nav-item:hover{
   text-shadow:  0 -4px 15px rgba(255,255,255,0.3);
@@ -101,21 +104,17 @@ li.nav-item:nth-of-type(6):hover ~ .underbar{
   width:4em;
 }
 
-
-
-
-
+}
 
 
 @media screen and (max-width:767px){
 
-.col-6:nth-child(3){
+.home-display>.col-6:nth-child(3){
   display: none;
 }
-.col-4:nth-child(4){
+.home-display>.col-4:nth-child(4){
   display: none;
 }
-
 
 }
 
@@ -157,11 +156,63 @@ header.bg-image-full:hover::before{
   opacity: .9;
   transform: scale(1);
 }
+.release-cont{
+
+    /* How pronounced should the 3D effects be */
+    perspective: 800px;
+    -webkit-perspective: 800px;
+    /* background: radial-gradient(#e0e0e0, #aaa); */
+    /* width:100%;
+    height:auto; */
+    margin:0 auto;
+    border-radius:6px;
+    position:relative;
+}
+
+.release-front,
+.release-verso{
+    /* Enable 3D transforms */
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    /* We are using two separate divs for the front and back of the
+       phone. This will hide the divs when they are flipped, so that the
+       opposite side can be seen:  */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    position:relative;
+    top: 0;
+
+    /* Animate the transitions */
+    transition:0.8s;
+}
+
+.release-verso{
+    position: absolute;
+    /* The back side is flipped 180 deg by default */
+    transform:rotateY(180deg);
+    -webkit-transform:rotateY(180deg);
+    /* background:url("../img/tsitsikamma-verso.jpg") no-repeat left center; */
+    background-position:right center;
+
+}
+
+.release-cont:hover .release-front{
+    /* When the container is hovered, flip the front side and hide it .. */
+    transform:rotateY(180deg);
+    -webkit-transform:rotateY(180deg);
+}
+
+.release-cont:hover .release-verso{
+    /* .. at the same time flip the back side into visibility */
+    transform:rotateY(360deg);
+    -webkit-transform:rotateY(360deg);
+}
+
 
 img.beats{
   filter: grayscale(100%);
   transition: .5s;
-  width: 90%;
+  width: 95%;
 }
 
 img.beats:hover{
@@ -172,7 +223,6 @@ img.release{
   transition: .4s;
   transform: scale(0.95);
   width: 90%;
-
 }
 
 img.release:hover{
