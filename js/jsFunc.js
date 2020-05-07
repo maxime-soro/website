@@ -29,6 +29,10 @@ for (j = 0; j < btns.length; j++) {
 	if (c == "best") w3AddClass(btns[2], "active-sort")
 	if (c == "melo") w3AddClass(btns[3], "active-sort")
 	if (c == "verm") w3AddClass(btns[4], "active-sort")
+	if (c == "tsitsi") w3AddClass(btns[5], "active-sort")
+	if (c == "lagu") w3AddClass(btns[6], "active-sort")
+
+
 
 }
 

@@ -109,7 +109,7 @@ li.nav-item:nth-of-type(6)>a.nav-link:hover::after{
   display: block;
   position: absolute;
   background: rgba(100,100,200,0);
-  height: 0.15em;
+  height: 0.18em;
   top: 2.3em;
   width:1%;
   -webkit-transition: 0.4s ease;
