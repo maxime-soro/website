@@ -15,8 +15,8 @@ div{
 }
 
 header.bg-image-full{
-  padding-top: 18em !important;
-  padding-bottom: 18em !important;
+  padding-top: 15em !important;
+  padding-bottom: 15em !important;
 }
 
 /* .nav-link::before, .nav-link::after{
@@ -109,8 +109,8 @@ li.nav-item:nth-of-type(6)>a.nav-link:hover::after{
   display: block;
   position: absolute;
   background: rgba(100,100,200,0);
-  height: 0.2em;
-  top: 2.4em;
+  height: 0.15em;
+  top: 2.3em;
   width:1%;
   -webkit-transition: 0.4s ease;
 }
@@ -207,6 +207,12 @@ li.nav-item:nth-of-type(6):hover ~ .underbar{
   /* transform: scale(1); */
 }
 
+.contact-image{
+  background: url('https://unsplash.it/1900/1080?image=1076') no-repeat center center scroll;
+  width:90%;
+
+}
+
 header.bg-image-full:hover::before{
   filter: grayscale(0%);
   opacity: .9;
@@ -283,6 +289,21 @@ img.release{
 
 img.release:hover{
   transform: scale(1);
+}
+
+img.merch-item{
+  transition: .4s;
+
+}
+
+img.merch-item:hover{
+  transition: .4s;
+  opacity: 0.8;
+}
+
+.group-merch>li{
+  font-size: .8em;
+  padding: .3em .6em;
 }
 
 span.contact-phone{
