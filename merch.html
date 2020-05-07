@@ -11,13 +11,14 @@
   <title>Païsley -  Merch</title>
 
   <!-- Bootstrap core CSS -->
+    <script type="text/javascript" src="js/jsFunc.js"></script>
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://use.fontawesome.com/e8dfed5a02.js"></script>
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/jsFunc.js"></script>
+
   <!-- Custom styles for this template -->
   <link href="css/full-width-pics.css" rel="stylesheet">
 
@@ -82,32 +83,40 @@
     <div class="row grid">
 
         <div class="col-sm-3 col-md-2">
-          <ul class="list-group group-merch">
-            <li class="list-group-item active">New arrivals</li>
-            <li class="list-group-item">Best sellers</li>
-            <li class="list-group-item">Melodelize</li>
-            <li class="list-group-item">Vermilion Cliffs</li>
+          <!-- <ul class="list-group group-merch" id="sortMerch">
+            <li class="list-group-item active"><button class="active" type="button" name="button" onclick="sortMerch('new')">New arrivals</button></li>
+            <li class="list-group-item"><button type="button" name="button" onclick="sortMerch('best')">Best sellers</button></li>
+            <li class="list-group-item"><button type="button" name="button" onclick="sortMerch('melo')">Melodelize</button></li>
+            <li class="list-group-item"><button type="button" name="button" onclick="sortMerch('new')">Vermilion Cliffs</button></li>
+            <li class="list-group-item"><button type="button" name="button" onclick="sortMerch('all')">All</button></li>
+          </ul> -->
+          <ul class="list-group group-merch" id="sortMerch1">
+            <li><button class="btn active-sort" type="button" name="button" onclick="sortMerch('all')">All</button></li>
+            <li><button class="btn" type="button" name="button" onclick="sortMerch('new')">New arrivals</button></li>
+            <li><button class="btn" type="button" name="button" onclick="sortMerch('best')">Best sellers</button></li>
+            <li><button class="btn" type="button" name="button" onclick="sortMerch('melo')">Melodelize</button></li>
+            <li><button class="btn" type="button" name="button" onclick="sortMerch('verm')">Vermilion Cliffs</button></li>
           </ul>
         </div>
         <div class="col-sm-9 col-md-10 pl-1">
           <div class="row">
-          <div class="col-sm-6 col-md-4 p-2">
+          <div class="col-sm-6 col-md-4 p-2 sortMerch show melo best">
             <img class="img-fluid d-block mx-auto merch-item" src="img/merch/tshirt-melodelize-blk.png" alt="">
           </div>
-          <div class="col-sm-6 col-md-4 p-2">
+          <div class="col-sm-6 col-md-4 p-2 sortMerch show melo">
             <img class="img-fluid d-block mx-auto merch-item" src="img/merch/tshirt-melodelize-wht.png" alt="">
           </div>
-          <div class="col-sm-6 col-md-4 p-2">
+          <div class="col-sm-6 col-md-4 p-2 sortMerch show melo new">
             <img class="img-fluid d-block mx-auto merch-item" src="img/merch/tshirt-melologo-blk.png" alt="">
           </div>
 
-          <div class="col-sm-6 col-md-4 p-2">
+          <div class="col-sm-6 col-md-4 p-2 sortMerch show melo new">
             <img class="img-fluid d-block mx-auto merch-item" src="img/merch/tshirt-melologo-wht.png" alt="">
           </div>
-          <div class="col-sm-6 col-md-4 p-2">
+          <div class="col-sm-6 col-md-4 p-2 sortMerch show verm best">
             <img class="img-fluid d-block mx-auto merch-item" src="img/merch/tshirt-vermilion-blk.png" alt="">
           </div>
-          <div class="col-sm-6 col-md-4 p-2">
+          <div class="col-sm-6 col-md-4 p-2 sortMerch show verm best">
             <img class="img-fluid d-block mx-auto merch-item" src="img/merch/tshirt-vermilion-wht.png" alt="">
           </div>
           </div>
