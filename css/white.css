@@ -11,7 +11,16 @@ section{
 
 h1{
   color: #363a40;
+}
 
+h1>a{
+  color: #363a40;
+  transition: ease .3s;
+}
+
+h1>a:hover{
+  color: #5d6064;
+  transition: ease .3s;
 }
 
 p.lead{
