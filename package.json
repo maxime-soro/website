@@ -3,7 +3,8 @@
     "name": "startbootstrap-full-width-pics",
     "version": "4.2.1",
     "scripts": {
-        "start": "node_modules/.bin/gulp watch"
+        "start": "npm run lite",
+        "lite": "lite-server"
     },
     "description": "A HTML template featuring sections with full width image backgrounds built with Bootstrap",
     "keywords": [
@@ -36,6 +37,7 @@
         "browser-sync": "2.26.7",
         "del": "^4.1.1",
         "gulp": "4.0.2",
+        "lite-server": "^2.5.4",
         "merge-stream": "2.0.0"
     }
 }
