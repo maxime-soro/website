@@ -247,6 +247,7 @@ h1>a#contact:hover::after{
   position: relative;
   z-index: 0;
   background-color: rgba(32, 32, 32, 1);
+
 }
 
 .bg-image-full::before{
@@ -262,8 +263,8 @@ h1>a#contact:hover::after{
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  opacity: 0.3;
-  filter: grayscale(33%) blur(0.15em);
+  opacity: 0.4;
+  filter: grayscale(50%) blur(0em);
   transition: .3s;
   transform: scale(1);
 }
@@ -377,23 +378,24 @@ h1>a#contact:hover::after{
 }
 
 #release-bg.bg-image-full::before{
-  background-image: url("../img/profil2-large.jpg");
+  background-image: url("../img/bckgnd4.jpg");
 }
 
 #beats-bg.bg-image-full::before{
-  background-image: url("../img/profil-large.jpg");
+  background-image: url("../img/bckgnd6.jpg");
+  /* filter: blur(em); */
 }
 
 #merch-bg.bg-image-full::before{
-  background-image: url("../img/profil-large.jpg");
+  background-image: url("../img/bckgnd3.jpg");
 }
 
 #studio-bg.bg-image-full::before{
-  background-image: url("../img/psly-profile.jpg");
+  background-image: url("../img/bckgnd2.jpg");
 }
 
 #contact-bg.bg-image-full::before{
-  background-image: url("../img/psly-profile.jpg");
+  background-image: url("../img/bckgnd5.jpg");
 }
 
 .gradient-fb.bg-image-full::before{
@@ -413,8 +415,8 @@ h1>a#contact:hover::after{
 }
 
 .bg-image-full:hover::before{
-  filter: grayscale(33%) blur(0.4em);
-  opacity: .4;
+  filter: grayscale(40%) blur(0.3em);
+  opacity: .3;
   transform: scale(1);
 }
 
@@ -531,7 +533,7 @@ header.bg-image-full:hover::before{
 
 
 img.beats{
-  filter: grayscale(75%);
+  filter: grayscale(90%);
   transition: .5s;
   width: 95%;
 }
