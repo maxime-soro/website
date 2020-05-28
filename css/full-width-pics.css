@@ -295,7 +295,7 @@ h1>a#contact:hover::after{
 }
 
 #gradient1.bg-image-full-rel::before{
-  background-image: url("../img/gradient-rel1d.png");
+  background-image: url("../img/gradient-rel1.png");
   opacity: 0.7;
   filter: grayscale(10%) blur(0.5em);
   transform: scaleY(0.94);
@@ -304,14 +304,14 @@ h1>a#contact:hover::after{
 
 #gradient2.bg-image-full-rel::before{
   /* background: linear-gradient(to left, #242043, #8d809540 33%, #00000000); */
-  background-image: url("../img/gradient-rel2b.png");
+  background-image: url("../img/gradient-rel2.png");
   opacity: 0.7;
   filter: grayscale(10%) blur(0.5em);
   transform: scaleY(0.94);
 }
 
 #gradient3.bg-image-full-rel::before{
-  background-image: url("../img/gradient-rel3c.png");
+  background-image: url("../img/gradient-rel3.png");
   opacity: 0.7;
   filter: grayscale(10%) blur(0.5em);
   transform: scaleY(0.94);
@@ -531,7 +531,7 @@ header.bg-image-full:hover::before{
 
 
 img.beats{
-  filter: grayscale(100%);
+  filter: grayscale(75%);
   transition: .5s;
   width: 95%;
 }
