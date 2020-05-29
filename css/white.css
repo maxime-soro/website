@@ -30,3 +30,13 @@ p.lead{
 p{
   color: #212528;
 }
+
+i {
+  color: rgba(40, 40, 40, 0.9);
+    transition: .1s;
+}
+
+i:hover{
+  color: rgba(40, 40, 40, 0.7);
+  transition: .1s;
+}
