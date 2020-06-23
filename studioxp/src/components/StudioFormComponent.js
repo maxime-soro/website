@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import { Button, ButtonGroup, Modal, ModalHeader, ModalBody, ModalFooter, Label, Row, Col } from 'reactstrap';
+import { Button, ButtonGroup, Modal, ModalHeader, ModalBody, ModalFooter, Label, Row, Col, Container } from 'reactstrap';
 
 
 class StudioForm extends Component {
@@ -92,13 +92,13 @@ class StudioForm extends Component {
         <Col xs="12">
           <ButtonGroup>
           <Row>
-            <Button color="info" onClick={() => onCheckboxBtnClick(1)} active={cSelected.includes(1)}>Chill</Button>
-            <Button color="primary" onClick={() => onCheckboxBtnClick(2)} active={cSelected.includes(2)}>Énergique</Button>
-            <Button color="success" onClick={() => onCheckboxBtnClick(3)} active={cSelected.includes(3)}>Joyeux</Button>
-            <Button color="secondary" onClick={() => onCheckboxBtnClick(4)} active={cSelected.includes(4)}>Triste</Button>
-            <Button color="danger" onClick={() => onCheckboxBtnClick(5)} active={cSelected.includes(5)}>Énervé</Button>
-            <Button color="light" onClick={() => onCheckboxBtnClick(6)} active={cSelected.includes(6)}>Rêveur</Button>
-            <Button color="warning" onClick={() => onCheckboxBtnClick(7)} active={cSelected.includes(7)}>Normal</Button>
+            <Button className="m-1" color="info" onClick={() => onCheckboxBtnClick(1)} active={cSelected.includes(1)}>Chill</Button>{' '}
+            <Button className="m-1" color="primary" onClick={() => onCheckboxBtnClick(2)} active={cSelected.includes(2)}>Énergique</Button>{' '}
+            <Button className="m-1" color="success" onClick={() => onCheckboxBtnClick(3)} active={cSelected.includes(3)}>Joyeux</Button>
+            <Button className="m-1" color="secondary" onClick={() => onCheckboxBtnClick(4)} active={cSelected.includes(4)}>Triste</Button>
+            <Button className="m-1" color="danger" onClick={() => onCheckboxBtnClick(5)} active={cSelected.includes(5)}>Énervé</Button>
+            <Button className="m-1" color="light" onClick={() => onCheckboxBtnClick(6)} active={cSelected.includes(6)}>Rêveur</Button>
+            <Button className="m-1" color="warning" onClick={() => onCheckboxBtnClick(7)} active={cSelected.includes(7)}>Normal</Button>
             </Row>
           </ButtonGroup>
           </Col>
