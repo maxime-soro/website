@@ -11,7 +11,12 @@
   <title>Païsley - Studio</title>
 
   <!-- Bootstrap core CSS -->
+  <script src="https://use.fontawesome.com/e8dfed5a02.js"></script>
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jsFunc.js"></script>
 
   <!-- Custom styles for this template -->
   <link href="css/full-width-pics.css" rel="stylesheet">
@@ -58,46 +63,62 @@
   </nav>
 
   <!-- Header - set the background image for the header in the line below -->
-  <header class="py-5 bg-image-full" style="background-image: url('https://unsplash.it/1900/1080?image=1076');">
-    <img class="img-fluid d-block mx-auto" src="http://placehold.it/200x200&text=Logo" alt="">
+  <header id="releases-header" class="py-5">
+
   </header>
 
+
   <!-- Content section -->
-  <section class="py-5">
-    <div class="container">
-      <h1>Section Heading</h1>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
+  <section class="py-3">
+      <div class="row w-100">
+    <div class="col-sm-11 offset-sm-1 col-md-7">
+      <h1>Studio</h1>
+      <p class="lead">Bienvenue chez vous.</p>
+      <p>Laissez vous tenter par notre expérience musicale immersive. (Écouteurs ou enceintes recommandées) </p>
     </div>
+  </div>
   </section>
+
+  <section id="studio-bg" class="py-5 row bg-image-full">
+    <div class="col-12 py-5 text-center">
+      <div class="col-12 py-5 text-center">
+        <span>
+          <button type="button" class="btn btn-secondary btn-lg w-50 py-3">
+            <i class="fa fa-headphones fa-lg" style="font-size:5em;"></i>
+          </button>
+        </span>
+      </div>
+    </div>
+
+
+  </section>
+
 
   <!-- Image Section - set the background image for the header in the line below -->
-  <section class="py-5 bg-image-full" style="background-image: url('https://unsplash.it/1900/1080?image=1081');">
-    <!-- Put anything you want here! There is just a spacer below for demo purposes! -->
-    <div style="height: 200px;"></div>
-  </section>
+
 
   <!-- Content section -->
-  <section class="py-5">
-    <div class="container">
-      <h1>Section Heading</h1>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
-    </div>
-  </section>
+
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
+  <footer class="py-4 row bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Melodelize Records 2020</p>
+      <p class="m-0 text-center text-white"> &copy; &#8471; 2020 Melodelize Records</p>
     </div>
-    <!-- /.container -->
   </footer>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+  <!-- Charge React -->
+  <!-- Remarque : pour le déploiement, remplacez "development.js"
+       par "production.min.js" -->
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- Charge notre composant React -->
+  <script src="like_button.js"></script>
 </body>
 
 </html>

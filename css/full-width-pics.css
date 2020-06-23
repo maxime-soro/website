@@ -5,6 +5,13 @@
  */
 body {
   padding-top: 56px;
+  background: url("../img/profil-large.jpg") no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    /* opacity: .5; */
+    /* padding: 0; */
+    /* height: 100%; */
+    /* width: 100%; */
 }
 div{
   display: inline-block;
@@ -33,7 +40,18 @@ p.lead{
   color: rgba(255, 255, 255, 0.8);
 }
 
+nav.navbar{
+  background-color: rgba(100, 100, 100, 0);
+  background: url("../img/profil-large.jpg") no-repeat center center fixed;
+  background-size: cover;
+  /* background-position:  -20px; */
+  /* opacity: 0.7; */
 
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(210,210,210,0.9);
+}
 
 .underbar{
   display: block;
@@ -258,13 +276,13 @@ h1>a#contact:hover::after{
   right: 0;
   left: 0;
   bottom: 0;
-  background: url('https://unsplash.it/1900/1080?image=1076') no-repeat center center scroll;
+  background: no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  opacity: 0.3;
-  filter: grayscale(50%) blur(0em);
+  opacity: 0.45;
+  filter: grayscale(60%) blur(0em);
   transition: .3s;
   transform: scale(1);
 }
@@ -340,26 +358,29 @@ h1>a#contact:hover::after{
 }
 
 #home-header.bg-image-full{
-  padding-top: 15em !important;
-  padding-bottom: 15em !important;
-
+  background-color: rgba(40, 40, 44, 0) !important;
+  padding-top: 20em !important;
+  padding-bottom: 20em !important;
 }
+
+
 
 #home-header.bg-image-full::before{
   /* z-index:- */
   filter: grayscale(10%);
-  opacity: 0.5;
-  background: url("../img/profil-large.jpg") no-repeat center center scroll;
+  opacity: 0.3;
+  /* background: url("../img/profil-large.jpg") no-repeat center center scroll; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
 
+
   transform: scale(1);
 }
 #home-header.bg-image-full:hover::before{
   transform: scale(1);
-  opacity: 0.9;
+  opacity: 0;
 
 }
 header.bg-image-full:hover::before{
@@ -429,8 +450,8 @@ header.bg-image-full:hover::before{
 }
 
 .bg-image-full:hover::before{
-  filter: grayscale(40%) blur(0.2em);
-  opacity: .2;
+  filter: grayscale(40%) blur(0em);
+  opacity: .5;
   transform: scale(1);
 }
 
@@ -440,12 +461,12 @@ section{
 }
 
 .home-title{
-  top: 2em;
+  top: 2.9em;
   position: relative;
   /* border:  2px ridge rgba(80, 80, 220, .6); */
   background-color: rgba(150, 150, 150, .2);
   z-index: 2;
-  padding: 0.5em 1em;
+  padding: 0.4em 1em;
 }
 
 .release-title-r{
@@ -572,6 +593,11 @@ img.merch-item:hover{
   opacity: 0.8;
 }
 
+ul.group-merch{
+  list-style-type: none;
+}
+
+
 #sortMerch1>li>button{
   width:100%;
   text-align: left;
@@ -636,4 +662,9 @@ width:5%;
 
 .blog .carousel-indicators .active {
 background: #707070;
+}
+
+.row{
+  margin-left: auto;
+  margin-right: auto;
 }
