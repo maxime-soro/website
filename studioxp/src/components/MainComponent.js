@@ -4,6 +4,7 @@ import Footer from './FooterComponent';
 import Header from './HeaderComponent';
 import StudioForm from './StudioFormComponent';
 import '../css/full-width-pics.css';
+import '../vendor/bootstrap/css/bootstrap.min.css';
 
 
 class Main extends Component {
