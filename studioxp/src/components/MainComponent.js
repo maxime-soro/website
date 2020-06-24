@@ -3,6 +3,7 @@ import { Container, Row, Col, Button } from 'reactstrap';
 import Footer from './FooterComponent';
 import Header from './HeaderComponent';
 import StudioForm from './StudioFormComponent';
+import StudioFormOld from './StudioFormOldComponent';
 import '../css/full-width-pics.css';
 import '../vendor/bootstrap/css/bootstrap.min.css';
 
@@ -28,6 +29,8 @@ class Main extends Component {
 
         <Col xs="12" className="">
           <StudioForm />
+          <StudioFormOld />
+
         </Col>
 
         </Row>

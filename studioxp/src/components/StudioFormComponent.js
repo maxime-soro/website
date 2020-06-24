@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
-import { Button, ButtonGroup, Modal, ModalHeader, ModalBody, ModalFooter, Label, Row, Col, Container } from 'reactstrap';
-
+import { Button, ButtonGroup, Modal, ModalHeader, ModalBody, ModalFooter, Row, Col, Container, Form, FormGroup, Label, Input, FormText  } from 'reactstrap';
+import { CheckboxGroup } from 'react-checkbox-group';
 
 class StudioForm extends Component {
   constructor(props){
@@ -8,13 +8,17 @@ class StudioForm extends Component {
 
     this.state = {
       isModalOpen: false,
-      isModalNestedOpen: false,
-      isModalNestedNestedOpen: false
+
     };
     this.toggleModal = this.toggleModal.bind(this);
-    this.toggleNestedModal = this.toggleNestedModal.bind(this);
-    this.toggleNestedNestedModal = this.toggleNestedNestedModal.bind(this);
-    this.toggleAll = this.toggleAll.bind(this);
+    this.HandleSound = this.HandleSound.bind(this);
+    this.handleTypeChange = this.handleTypeChange.bind(this);
+    this.handleTrapChange = this.handleTrapChange.bind(this);
+    this.handleCloudChange = this.handleCloudChange.bind(this);
+    this.handleElectroChange = this.handleElectroChange.bind(this);
+    this.handleHouseChange = this.handleHouseChange.bind(this);
+    this.handleLatinoChange = this.handleLatinoChange.bind(this);
+
 
   }
 
@@ -24,134 +28,46 @@ class StudioForm extends Component {
     });
   }
 
-  toggleNestedModal(){
-    this.setState({
-      isModalNestedOpen: !this.state.isModalNestedOpen
-    });
-  }
-  toggleNestedNestedModal(){
-      this.setState({
-        isModalNestedNestedOpen: !this.state.isModalNestedNestedOpen
-      });
+
+   HandleSound(evt){
+
+            alert( "Type " + this.state.selectedType +
+            "\nTrap " + this.state.selectedTrap +
+            "\nCloud " + this.state.selectedCloud +
+            "\nElectro " + this.state.selectedElectro +
+            "\nHouse " + this.state.selectedHouse +
+            "\nLatino " + this.state.selectedLatino
+          );
+            evt.preventDefault();
+
+            this.setState({selectedType: false});
+            this.setState({selectedTrap: false});
+            this.setState({selectedCloud: false});
+            this.setState({selectedElectro: false});
+            this.setState({selectedHouse: false});
+            this.setState({selectedLatino: false});
     }
 
 
-  toggleAll(){
-    this.setState({
-      isModalOpen: !this.state.isModalOpen,
-      isModalNestedOpen: !this.state.isModalNestedOpen,
-      isModalNestedNestedOpen: !this.state.isModalNestedNestedOpen
+    handleTypeChange(evt) {
+  this.setState({
+    selectedType: evt.target.value
+  });
+}
 
+    handleTrapChange(evt) {
+      this.setState({
+        selectedTrap: evt.target.checked,
+      });
 
-    });
-  }
+}
+    handleCloudChange(evt) {this.setState({selectedCloud: evt.target.checked});}
+    handleElectroChange(evt) {this.setState({selectedElectro: evt.target.checked});}
+    handleHouseChange(evt) {this.setState({selectedHouse: evt.target.checked});}
+    handleLatinoChange(evt) {this.setState({selectedLatino: evt.target.checked});}
 
 
   render(){
-
-    const StepOne = (props) => {
-      const [cSelected, setCSelected] = useState([]);
-      const [rSelected, setRSelected] = useState(null);
-
-      const onCheckboxBtnClick = (selected) => {
-        const index = cSelected.indexOf(selected);
-        if (index < 0) {
-          cSelected.push(selected);
-        } else {
-          cSelected.splice(index, 1);
-        }
-        setCSelected([...cSelected]);
-      }
-      return (
-        <div>
-        <h5>Tu recherches</h5>
-          <ButtonGroup className="mb-3">
-            <Button color="dark" onClick={() => setRSelected(1)} active={rSelected === 1}>Prod</Button>
-            <Button color="dark" onClick={() => setRSelected(2)} active={rSelected === 2}>Chanson</Button>
-            <Button color="dark" onClick={() => setRSelected(3)} active={rSelected === 3}>Chanceux ?</Button>
-          </ButtonGroup>
-
-        <h5>Le style que tu recherches</h5>
-          <ButtonGroup>
-            <Button color="secondary" onClick={() => onCheckboxBtnClick(1)} active={cSelected.includes(1)}>Trap</Button>
-            <Button color="info" onClick={() => onCheckboxBtnClick(2)} active={cSelected.includes(2)}>Cloud</Button>
-            <Button color="success" onClick={() => onCheckboxBtnClick(3)} active={cSelected.includes(3)}>Electro</Button>
-            <Button color="warning" onClick={() => onCheckboxBtnClick(4)} active={cSelected.includes(4)}>House</Button>
-            <Button color="danger" onClick={() => onCheckboxBtnClick(5)} active={cSelected.includes(5)}>Latino</Button>
-          </ButtonGroup>
-        </div>
-      );
-    }
-
-    const StepTwo = (props) => {
-      const [cSelected, setCSelected] = useState([]);
-      const [rSelected, setRSelected] = useState(null);
-
-      const onCheckboxBtnClick = (selected) => {
-        const index = cSelected.indexOf(selected);
-        if (index < 0) {
-          cSelected.push(selected);
-        } else {
-          cSelected.splice(index, 1);
-        }
-        setCSelected([...cSelected]);
-      }
-      return (
-        <div>
-        <h5>Dans quel mood es-tu ?</h5>
-          <ButtonGroup>
-          <Row>
-            <Button className="m-1" color="info" onClick={() => onCheckboxBtnClick(1)} active={cSelected.includes(1)}>Chill</Button>{' '}
-            <Button className="m-1" color="primary" onClick={() => onCheckboxBtnClick(2)} active={cSelected.includes(2)}>Énergique</Button>{' '}
-            <Button className="m-1" color="success" onClick={() => onCheckboxBtnClick(3)} active={cSelected.includes(3)}>Joyeux</Button>
-            <Button className="m-1" color="secondary" onClick={() => onCheckboxBtnClick(4)} active={cSelected.includes(4)}>Triste</Button>
-            <Button className="m-1" color="danger" onClick={() => onCheckboxBtnClick(5)} active={cSelected.includes(5)}>Énervé</Button>
-            <Button className="m-1" color="light" onClick={() => onCheckboxBtnClick(6)} active={cSelected.includes(6)}>Rêveur</Button>
-            <Button className="m-1" color="warning" onClick={() => onCheckboxBtnClick(7)} active={cSelected.includes(7)}>Normal</Button>
-            </Row>
-          </ButtonGroup>
-
-        </div>
-      );
-    }
-
-    const StepThree = (props) => {
-      const [cSelected, setCSelected] = useState([]);
-      const [rSelected, setRSelected] = useState(null);
-
-      const onCheckboxBtnClick = (selected) => {
-        const index = cSelected.indexOf(selected);
-        if (index < 0) {
-          cSelected.push(selected);
-        } else {
-          cSelected.splice(index, 1);
-        }
-        setCSelected([...cSelected]);
-      }
-      return (
-        <div>
-          <h5>Les sonorités que tu apprécies ?</h5>
-
-            <ButtonGroup>
-            <Row>
-              <Button className="m-1" color="info" outline onClick={() => onCheckboxBtnClick(1)} active={cSelected.includes(1)}>Drum Kit</Button>{' '}
-              <Button className="m-1" color="primary" outline onClick={() => onCheckboxBtnClick(2)} active={cSelected.includes(2)}>Batteries</Button>{' '}
-              <Button className="m-1" color="success" outline onClick={() => onCheckboxBtnClick(3)} active={cSelected.includes(3)}>Rhodes</Button>
-              <Button className="m-1" color="dark" outline onClick={() => onCheckboxBtnClick(4)} active={cSelected.includes(4)}>Piano</Button>
-              <Button className="m-1" color="danger" outline onClick={() => onCheckboxBtnClick(5)} active={cSelected.includes(5)}>Synth</Button>
-              <Button className="m-1" color="secondary" outline onClick={() => onCheckboxBtnClick(6)} active={cSelected.includes(6)}>Samples</Button>
-              <Button className="m-1 button-purple" outline onClick={() => onCheckboxBtnClick(7)} active={cSelected.includes(7)}>808</Button>
-              <Button className="m-1 button-darkblue" outline onClick={() => onCheckboxBtnClick(8)} active={cSelected.includes(8)}>Bass</Button>
-              <Button className="m-1 button-turquoise" outline onClick={() => onCheckboxBtnClick(9)} active={cSelected.includes(9)}>Arp Bells</Button>
-              <Button className="m-1 button-hotyellow" outline onClick={() => onCheckboxBtnClick(10)} active={cSelected.includes(10)}>Guitare Acoustique</Button>
-              <Button className="m-1 button-hellred" outline onClick={() => onCheckboxBtnClick(11)} active={cSelected.includes(11)}>Guitare Électrique</Button>
-
-              </Row>
-            </ButtonGroup>
-
-        </div>
-      );
-    }
 
     return(
       <div>
@@ -160,37 +76,182 @@ class StudioForm extends Component {
         </Button>
 
         <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+        <Form onSubmit={this.HandleSound}>
           <ModalHeader toggle={this.toggleModal}>Choisissez une des catégories</ModalHeader>
           <ModalBody>
-          <StepOne />
+
+            <FormGroup tag="fieldset">
+            <h5>Tu recherches</h5>
+                <FormGroup check>
+                  <Label check>
+                    <Input type="radio" name="type" id="prod" value="prod"
+                    checked={this.state.selectedType === 'prod'}
+                    onChange={this.handleTypeChange} />{' '}
+                    Prod
+                    </Label>
+                </FormGroup>
+                <FormGroup check>
+                  <Label check>
+                    <Input type="radio" name="type" id="chanson" value="chanson"
+                      checked={this.state.selectedType === 'chanson'}
+                      onChange={this.handleTypeChange} />{' '}
+                    Chanson
+                  </Label>
+                </FormGroup>
+                <FormGroup check>
+                  <Label check>
+                    <Input type="radio" name="type" id="both" value="both"
+                    checked={this.state.selectedType === 'both'}
+                    onChange={this.handleTypeChange} />{' '}
+                    N'importe
+                  </Label>
+                </FormGroup>
+                </FormGroup>
+
+
+                <h5>Le style ?</h5>
+
+            <FormGroup check inline>
+              <Label check>
+                <Input type="checkbox" name="style" id="trap" value="trap"
+                    checked={this.state.selectedTrap}
+                    onChange={this.handleTrapChange} /> Trap
+              </Label>
+              </FormGroup>
+              <FormGroup check inline>
+              <Label check>
+                <Input type="checkbox" name="style" id="Cloud" value="cloud"
+                  checked={this.state.selectedCloud}
+                  onChange={this.handleCloudChange}/> Cloud
+                </Label>
+              </FormGroup>
+              <FormGroup check inline>
+                <Label check>
+                  <Input type="checkbox" name="style" id="Electro" value="electro"
+                  checked={this.state.selectedElectro}
+                  onChange={this.handleElectroChange}/> Electro
+                </Label>
+                </FormGroup>
+                <FormGroup check inline>
+                <Label check>
+                  <Input type="checkbox" name="style" id="House" value="House"
+                  checked={this.state.selectedHouse}
+                  onChange={this.handleHouseChange} /> House
+                  </Label>
+                </FormGroup>
+                <FormGroup check inline>
+                  <Label check>
+                    <Input type="checkbox" name="style" id="Latino" value="Latino"
+                    checked={this.state.selectedLatino}
+                    onChange={this.handleLatinoChange} /> Latino
+                  </Label>
+                  </FormGroup>
+
+                  <h5>Le mood ?</h5>
+
+
+              <FormGroup check inline>
+                <Label check>
+                  <Input type="checkbox" /> Chill
+                </Label>
+                </FormGroup>
+                <FormGroup check inline>
+                <Label check>
+                  <Input type="checkbox" /> Énergique
+                  </Label>
+                </FormGroup>
+                <FormGroup check inline>
+                  <Label check>
+                    <Input type="checkbox" /> Joyeux
+                  </Label>
+                  </FormGroup>
+                  <FormGroup check inline>
+                  <Label check>
+                    <Input type="checkbox" /> Triste
+                    </Label>
+                  </FormGroup>
+                  <FormGroup check inline>
+                    <Label check>
+                      <Input type="checkbox" /> Énervé
+                    </Label>
+                    </FormGroup>
+                    <FormGroup check inline>
+                    <Label check>
+                      <Input type="checkbox" /> Rêveur
+                      </Label>
+                    </FormGroup>
+                    <FormGroup check inline>
+                      <Label check>
+                        <Input type="checkbox" /> Normal
+                      </Label>
+                      </FormGroup>
+
+                      <h5>Les instruments ?</h5>
+                  <FormGroup check inline>
+                    <Label check>
+                      <Input type="checkbox" /> Drum Kit
+                    </Label>
+                    </FormGroup>
+                    <FormGroup check inline>
+                    <Label check>
+                      <Input type="checkbox" /> Batteries
+                      </Label>
+                    </FormGroup>
+                    <FormGroup check inline>
+                      <Label check>
+                        <Input type="checkbox" /> Rhodes
+                      </Label>
+                      </FormGroup>
+                      <FormGroup check inline>
+                      <Label check>
+                        <Input type="checkbox" /> Piano
+                        </Label>
+                      </FormGroup>
+                      <FormGroup check inline>
+                        <Label check>
+                          <Input type="checkbox" /> Synth
+                        </Label>
+                        </FormGroup>
+                        <FormGroup check inline>
+                        <Label check>
+                          <Input type="checkbox" /> Samples
+                          </Label>
+                        </FormGroup>
+                        <FormGroup check inline>
+                          <Label check>
+                            <Input type="checkbox" /> 808
+                          </Label>
+                          </FormGroup>
+                          <FormGroup check inline>
+                          <Label check>
+                            <Input type="checkbox" /> Bass
+                            </Label>
+                          </FormGroup>
+                          <FormGroup check inline>
+                            <Label check>
+                              <Input type="checkbox" /> Arp Bells
+                            </Label>
+                            </FormGroup>
+                            <FormGroup check inline>
+                            <Label check>
+                              <Input type="checkbox" /> Guitare Acoustique
+                              </Label>
+                            </FormGroup>
+                            <FormGroup check inline>
+                              <Label check>
+                                <Input type="checkbox" /> Guitare Électrique
+                              </Label>
+                              </FormGroup>
+
+
           </ModalBody>
           <ModalFooter>
-          <Button color="success" onClick={this.toggleNestedModal}>Suivant</Button>
+          <Button type="submit" name="lessgo" color="success" onClick={this.toggleModal}>Écoutez</Button>
          <Button color="secondary" onClick={this.toggleModal}>Close</Button>
          </ModalFooter>
+          </Form>
           </Modal>
-          <Modal isOpen={this.state.isModalNestedOpen} toggle={this.toggleNestedModal}>
-            <ModalHeader toggle={this.toggleNestedModal}>Choisissez une des catégories</ModalHeader>
-            <ModalBody>
-            <StepTwo />
-            </ModalBody>
-            <ModalFooter>
-            <Button color="primary" onClick={this.toggleNestedModal}>Précédent</Button>
-              <Button color="success" onClick={this.toggleNestedNestedModal}>Suivant</Button>
-            <Button color="secondary" onClick={this.toggleAll}>Close All</Button>
-            </ModalFooter>
-            </Modal>
-          <Modal isOpen={this.state.isModalNestedNestedOpen} toggle={this.toggleNestedNestedModal}>
-            <ModalHeader toggle={this.toggleNestedNestedModal}>Choisissez une des catégories</ModalHeader>
-            <ModalBody>
-            <StepThree />
-            </ModalBody>
-            <ModalFooter>
-            <Button color="primary" onClick={this.toggleNestedNestedModal}>Précédent</Button>
-              <Button color="success">Suivant</Button>
-            <Button color="secondary" onClick={this.toggleAll}>Close All</Button>
-            </ModalFooter>
-            </Modal>
+
         </div>
       );
     }
