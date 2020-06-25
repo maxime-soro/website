@@ -2,11 +2,55 @@ import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Col, Container, Form, FormGroup, Label, Input  } from 'reactstrap';
 import AudioPlayer  from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
+import { Link } from 'react-router-dom';
+
 
 
 
 var title = "";
 var link = "";
+var urlLink = "";
+
+const ModalAudio = ({title, link, urlLink}) => {
+    if(title === ""){
+      return(
+      <div>
+      <ModalHeader>
+      <h5>Aucun résultat</h5>
+      </ModalHeader>
+      <ModalBody>
+      <h6>Malheureusement, nous n'avons pas pu trouver un résultat, nous vous invitons à recommencer à d'autres critères</h6>
+      </ModalBody>
+
+      </div>
+    );
+   }
+   else {
+     return(
+       <div>
+       <ModalHeader>
+         <h5>Vous écoutez : - " {title} " -</h5>
+       </ModalHeader>
+       <ModalBody>
+         <h6>Asseyez-vous confortablement et appréciez</h6>
+         <AudioPlayer
+               autoPlay
+               src={link}
+               onPlay={e => console.log("onPlay")}
+               // other props here
+             />
+
+       </ModalBody>
+       <ModalFooter>
+       <Button color="success" outline><a href={urlLink} target="_blank">Lien</a></Button>
+       </ModalFooter>
+
+       </div>
+     );
+   }
+
+   }
+
 
 class StudioForm extends Component {
   constructor(props){
@@ -15,8 +59,8 @@ class StudioForm extends Component {
     this.state = {
       isModalOpen: false,
       isModalNestedOpen: false
-
     };
+
     this.toggleModal = this.toggleModal.bind(this);
     this.toggleModalNested = this.toggleModalNested.bind(this);
     this.toggleAll = this.toggleAll.bind(this);
@@ -49,7 +93,6 @@ class StudioForm extends Component {
     this.handleAcoustic = this.handleAcoustic.bind(this);
     this.handleElectric = this.handleElectric.bind(this);
 
-
   }
 
   toggleModal(){
@@ -73,47 +116,103 @@ class StudioForm extends Component {
 
   handleSound(evt){
 
-            if (this.state.selectedType === "prod") {
-              if (this.state.selectedTrap || this.state.selectedCloud) {
-                  if (this.state.selectedReveur || this.state.selectedTriste) {
-                    link="epilogue.mp3";
-                    title="Epilogue";
-                  }
-              }
-              if (this.state.selectedElectro || this.state.selectedLatino) {
-                  if (this.state.selectedChill || this.state.selectedJoyeux) {
-                    link="caipirinha.mp3";
-                    title="Caïpirinha";
-                  }
-                  else if (this.state.selectedTriste || this.state.selectedReveur) {
-                    link=="isladelsol.mp3";
-                    title=="Isla Del Sol";
-                  }
-              }
-              if (this.state.selectedTrap) {
-                  if (this.state.selectedEnergique || this.state.selectedEnerve) {
-                    link=="east6thst.mp3";
-                    title=="East 6th St.";
-                  }
-              }
-              if (this.state.selectedCloud) {
-                  if (this.state.selectedTriste || this.state.selectedEnerve) {
-                    link=="longitude.mp3";
-                    title=="Longitude";
-                  }
-              }
-              if (this.state.selectedElectro || this.state.selectedHouse) {
-                  if (this.state.selectedJoyeux || this.state.selectedChill || this.state.selectedEnergique) {
-                    link=="cruise.mp3";
-                    title=="Cruise";
-                  }
-              }
+            link="";
+            title="";
+
+            if (this.state.selectedType === "prod" || this.state.selectedType === "both") {
+                if (this.state.selectedTrap || this.state.selectedCloud) {
+                    if (this.state.selectedReveur || this.state.selectedTriste) {
+                      link="epilogue.mp3";
+                      title="Epilogue";
+                      urlLink="https://www.youtube.com/watch?v=yvmmI72_M7c"
+                    }
+                }
+                if (this.state.selectedElectro || this.state.selectedLatino) {
+                    if (this.state.selectedChill || this.state.selectedJoyeux) {
+                      link="caipirinha.mp3";
+                      title="Caïpirinha";
+                      urlLink="https://www.youtube.com/watch?v=rlu0DEbuOaQ";
+                    }
+                    else if (this.state.selectedTriste || this.state.selectedReveur) {
+                      link="isladelsol.mp3";
+                      title="Isla Del Sol";
+                      urlLink="https://www.youtube.com/watch?v=Yhxq98k1FFA";
+                    }
+                }
+                if (this.state.selectedTrap) {
+                    if (this.state.selectedEnergique || this.state.selectedEnerve) {
+                      link="east6thst.mp3";
+                      title="East 6th St.";
+                      urlLink="https://www.youtube.com/watch?v=jL697ntWttg";
+                    }
+                }
+                if (this.state.selectedCloud) {
+                    if (this.state.selectedTriste || this.state.selectedEnerve) {
+                      link="longitude.mp3";
+                      title="Longitude";
+                      urlLink="https://www.youtube.com/watch?v=9ZTxx7eAfY0";
+                    }
+                }
+                if (this.state.selectedElectro || this.state.selectedHouse) {
+                    if (this.state.selectedJoyeux || this.state.selectedChill || this.state.selectedEnergique) {
+                      link="cruise.mp3";
+                      title="Cruise";
+                      urlLink="https://www.youtube.com/watch?v=_5ZTMR0USyE";
+                    }
+                }
 
             }
-            else if (this.state.selectedType === "chanson") {
+
+
+            if (this.state.selectedType === "chanson" || this.state.selectedType === "both") {
+                if (this.state.selectedTrap || this.state.selectedElectro) {
+                  if (this.state.selectedEnergique || this.state.selectedEnerve) {
+                      link="steel.mp3";
+                      title="Steel";
+                      urlLink="https://open.spotify.com/track/3FJAhLuXcDZrekBSACh37T?si=nc8HM69xR6SulxPx6dKFxA";
+                    }
+                }
+                if (this.state.selectedCloud) {
+                  if (this.state.selectedTriste || this.state.selectedReveur) {
+                      link="proud.mp3";
+                      title="Proud";
+                      urlLink="https://open.spotify.com/track/65bmYk4S1636c1q6t1XgA4?si=g8AxArufTHCJG68v_-qn4A";
+                    }
+                  if (this.state.selectedChill || this.state.selectedNormal) {
+                        link="triangle.mp3";
+                        title="Triangle";
+                        urlLink="https://open.spotify.com/track/4e0uYBiqHliwBdYhyrUJPv?si=SfQnTnIUSuapnLt8u2Y9aw";
+                    }
+                }
+                if (this.state.selectedHouse || this.state.selectedElectro) {
+                  if (this.state.selectedEnergique || this.state.selectedEnerve) {
+                      link="moab.mp3";
+                      title="Moab";
+                      urlLink="https://open.spotify.com/track/2NlJNPYa4joFdHshpqfx8D?si=FH2XxgUGT6uccDtD5BPwyQ";
+                    }
+                }
+                if (this.state.selectedLatino) {
+                  if (this.state.selectedTriste || this.state.selectedChill) {
+                      link="uyuni.mp3";
+                      title="Uyuni";
+                      urlLink="https://open.spotify.com/track/3Jtl40mdpQ5ELTtDbpMjfI?si=K-giLAGxSEqs3ZJ5vlk-yg";
+                    }
+                }
+                if (this.state.selectedElectro) {
+                  if (this.state.selectedTriste || this.state.selectedReveur) {
+                      link="833acres.mp3";
+                      title="833 Acres";
+                      urlLink="https://open.spotify.com/track/2qDKex1fks2C0ltOt8YPym?si=z1xybWDNQyCjs-6pvJ9e5w";
+                    }
+                }
+
             }
-            else if (this.state.selectedType === "both") {
+            if (title === "") {
+                      title="";
             }
+
+
+
 
             alert( "Type " + this.state.selectedType +
             "\nTrap " + this.state.selectedTrap +
@@ -204,10 +303,12 @@ class StudioForm extends Component {
     handleAcoustic(evt) {this.setState({selectedAcoustic: evt.target.checked});}
     handleElectric(evt) {this.setState({selectedElectric: evt.target.checked});}
 
+    onLink({urlLink}){
+      window.location.href={urlLink};
+    }
 
 
   render(){
-
     return(
       <div>
 
@@ -429,24 +530,10 @@ class StudioForm extends Component {
           </Form>
           </Modal>
           <Modal isOpen={this.state.isModalNestedOpen} toggle={this.toggleModalNested}>
-            <ModalHeader>
-              <h5>Vous écoutez : - " {title} " -</h5>
-            </ModalHeader>
-            <ModalBody>
-              <h6>Asseyez-vous confortablement et appréciez</h6>
-              <AudioPlayer
-                    autoPlay
-                    src={link}
-                    onPlay={e => console.log("onPlay")}
-                    // other props here
-                  />
-            </ModalBody>
-
-            <ModalFooter>
-            <Button color="success">Lien</Button>
-           <Button color="secondary" onClick={this.toggleAll}>Close</Button>
-            </ModalFooter>
-
+          <ModalAudio title={title} link={link} urlLink={urlLink}/>
+          <ModalFooter>
+          <Button color="secondary" onClick={this.toggleModalNested}>Close</Button>
+          </ModalFooter>
           </Modal>
 
         </div>
