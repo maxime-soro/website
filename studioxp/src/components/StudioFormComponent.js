@@ -1,6 +1,5 @@
-import React, { Component, useState } from 'react';
-import { Button, ButtonGroup, Modal, ModalHeader, ModalBody, ModalFooter, Row, Col, Container, Form, FormGroup, Label, Input, FormText  } from 'reactstrap';
-import { CheckboxGroup } from 'react-checkbox-group';
+import React, { Component } from 'react';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Col, Container, Form, FormGroup, Label, Input  } from 'reactstrap';
 
 class StudioForm extends Component {
   constructor(props){
@@ -13,11 +12,32 @@ class StudioForm extends Component {
     this.toggleModal = this.toggleModal.bind(this);
     this.HandleSound = this.HandleSound.bind(this);
     this.handleTypeChange = this.handleTypeChange.bind(this);
+
     this.handleTrapChange = this.handleTrapChange.bind(this);
     this.handleCloudChange = this.handleCloudChange.bind(this);
     this.handleElectroChange = this.handleElectroChange.bind(this);
     this.handleHouseChange = this.handleHouseChange.bind(this);
     this.handleLatinoChange = this.handleLatinoChange.bind(this);
+
+    this.handleChill = this.handleChill.bind(this);
+    this.handleEnergique = this.handleEnergique.bind(this);
+    this.handleJoyeux = this.handleJoyeux.bind(this);
+    this.handleTriste = this.handleTriste.bind(this);
+    this.handleEnerve = this.handleEnerve.bind(this);
+    this.handleReveur = this.handleReveur.bind(this);
+    this.handleNormal = this.handleNormal.bind(this);
+
+    this.handleDrumKit = this.handleDrumKit.bind(this);
+    this.handleBatteries = this.handleBatteries.bind(this);
+    this.handleRhodes = this.handleRhodes.bind(this);
+    this.handlePiano = this.handlePiano.bind(this);
+    this.handleSynth = this.handleSynth.bind(this);
+    this.handleSamples = this.handleSamples.bind(this);
+    this.handle808 = this.handle808.bind(this);
+    this.handleBass = this.handleBass.bind(this);
+    this.handleArpBells = this.handleArpBells.bind(this);
+    this.handleAcoustic = this.handleAcoustic.bind(this);
+    this.handleElectric = this.handleElectric.bind(this);
 
 
   }
@@ -31,21 +51,73 @@ class StudioForm extends Component {
 
    HandleSound(evt){
 
+            if (this.state.selectedType === "prod") {
+              alert("attention prod");
+            }
+            else if (this.state.selectedType === "chanson") {
+              alert("attention chanson")
+            }
+            else if (this.state.selectedType === "both") {
+              alert("attention both")
+            }
+
             alert( "Type " + this.state.selectedType +
             "\nTrap " + this.state.selectedTrap +
-            "\nCloud " + this.state.selectedCloud +
-            "\nElectro " + this.state.selectedElectro +
-            "\nHouse " + this.state.selectedHouse +
-            "\nLatino " + this.state.selectedLatino
+            " Cloud " + this.state.selectedCloud +
+            " Electro " + this.state.selectedElectro +
+            " House " + this.state.selectedHouse +
+            " Latino " + this.state.selectedLatino +
+
+            "\nChill " + this.state.selectedChill +
+            " Energique " + this.state.selectedEnergique +
+            " Joyeux " + this.state.selectedJoyeux +
+            " Triste " + this.state.selectedTriste +
+            " Enerve " + this.state.selectedEnerve +
+            " Reveur " + this.state.selectedReveur +
+            " Normal " + this.state.selectedNormal +
+
+            "\nDrumKit " + this.state.selectedDrumKit +
+            " Batteries " + this.state.selectedBatteries +
+            "Rhodes " + this.state.selectedRhodes +
+            " Piano " + this.state.selectedPiano +
+            " Synth " + this.state.selectedSynth +
+            " Samples " + this.state.selectedSamples +
+            " 808 " + this.state.selected808 +
+            " Bass " + this.state.selectedBass +
+            " ArpBells " + this.state.selectedArpBells +
+            " Acoustic " + this.state.selectedAcoustic +
+            " Electric " + this.state.selectedElectric
           );
+
             evt.preventDefault();
 
             this.setState({selectedType: false});
+
             this.setState({selectedTrap: false});
             this.setState({selectedCloud: false});
             this.setState({selectedElectro: false});
             this.setState({selectedHouse: false});
             this.setState({selectedLatino: false});
+
+            this.setState({selectedChill: false});
+            this.setState({selectedEnergique: false});
+            this.setState({selectedJoyeux: false});
+            this.setState({selectedTriste: false});
+            this.setState({selectedEnerve: false});
+            this.setState({selectedReveur: false});
+            this.setState({selectedNormal: false});
+
+            this.setState({selectedDrumKit: false});
+            this.setState({selectedBatteries: false});
+            this.setState({selectedRhodes: false});
+            this.setState({selectedPiano: false});
+            this.setState({selectedSynth: false});
+            this.setState({selectedSamples: false});
+            this.setState({selected808: false});
+            this.setState({selectedBass: false});
+            this.setState({selectedArpBells: false});
+            this.setState({selectedAcoustic: false});
+            this.setState({selectedElectric: false});
     }
 
 
@@ -55,16 +127,32 @@ class StudioForm extends Component {
   });
 }
 
-    handleTrapChange(evt) {
-      this.setState({
-        selectedTrap: evt.target.checked,
-      });
-
-}
+    handleTrapChange(evt) {this.setState({selectedTrap: evt.target.checked,});}
     handleCloudChange(evt) {this.setState({selectedCloud: evt.target.checked});}
     handleElectroChange(evt) {this.setState({selectedElectro: evt.target.checked});}
     handleHouseChange(evt) {this.setState({selectedHouse: evt.target.checked});}
     handleLatinoChange(evt) {this.setState({selectedLatino: evt.target.checked});}
+
+    handleChill(evt) {this.setState({selectedChill: evt.target.checked,});}
+    handleEnergique(evt) {this.setState({selectedEnergique: evt.target.checked});}
+    handleJoyeux(evt) {this.setState({selectedJoyeux: evt.target.checked});}
+    handleTriste(evt) {this.setState({selectedTriste: evt.target.checked});}
+    handleEnerve(evt) {this.setState({selectedEnerve: evt.target.checked});}
+    handleReveur(evt) {this.setState({selectedReveur: evt.target.checked});}
+    handleNormal(evt) {this.setState({selectedNormal: evt.target.checked});}
+
+    handleDrumKit(evt) {this.setState({selectedDrumKit: evt.target.checked,});}
+    handleBatteries(evt) {this.setState({selectedBatteries: evt.target.checked});}
+    handleRhodes(evt) {this.setState({selectedRhodes: evt.target.checked});}
+    handlePiano(evt) {this.setState({selectedPiano: evt.target.checked});}
+    handleSynth(evt) {this.setState({selectedSynth: evt.target.checked});}
+    handleSamples(evt) {this.setState({selectedSamples: evt.target.checked});}
+    handle808(evt) {this.setState({selected808: evt.target.checked});}
+    handleBass(evt) {this.setState({selectedBass: evt.target.checked});}
+    handleArpBells(evt) {this.setState({selectedArpBells: evt.target.checked});}
+    handleAcoustic(evt) {this.setState({selectedAcoustic: evt.target.checked});}
+    handleElectric(evt) {this.setState({selectedElectric: evt.target.checked});}
+
 
 
   render(){
@@ -152,94 +240,130 @@ class StudioForm extends Component {
 
               <FormGroup check inline>
                 <Label check>
-                  <Input type="checkbox" /> Chill
+                  <Input type="checkbox" name="mood" id="chill" value="chill"
+                  checked={this.state.selectedChill}
+                  onChange={this.handleChill}/> Chill
                 </Label>
                 </FormGroup>
                 <FormGroup check inline>
                 <Label check>
-                  <Input type="checkbox" /> Énergique
+                  <Input type="checkbox" name="mood" id="energique" value="energique"
+                  checked={this.state.selectedEnergique}
+                  onChange={this.handleEnergique} /> Énergique
                   </Label>
                 </FormGroup>
                 <FormGroup check inline>
                   <Label check>
-                    <Input type="checkbox" /> Joyeux
+                    <Input type="checkbox" name="mood" id="Joyeux" value="Joyeux"
+                    checked={this.state.selectedJoyeux}
+                    onChange={this.handleJoyeux} /> Joyeux
                   </Label>
                   </FormGroup>
                   <FormGroup check inline>
                   <Label check>
-                    <Input type="checkbox" /> Triste
+                    <Input type="checkbox" name="mood" id="triste" value="triste"
+                    checked={this.state.selectedTriste}
+                    onChange={this.handleTriste} /> Triste
                     </Label>
                   </FormGroup>
                   <FormGroup check inline>
                     <Label check>
-                      <Input type="checkbox" /> Énervé
+                      <Input type="checkbox" name="mood" id="enerve" value="enerve"
+                      checked={this.state.selectedEnerve}
+                      onChange={this.handleEnerve}/> Énervé
                     </Label>
                     </FormGroup>
                     <FormGroup check inline>
                     <Label check>
-                      <Input type="checkbox" /> Rêveur
+                      <Input type="checkbox" name="mood" id="reveur" value="reveur"
+                      checked={this.state.selectedReveur}
+                      onChange={this.handleReveur}/> Rêveur
                       </Label>
                     </FormGroup>
                     <FormGroup check inline>
                       <Label check>
-                        <Input type="checkbox" /> Normal
+                        <Input type="checkbox" name="mood" id="normal" value="normal"
+                        checked={this.state.selectedNormal}
+                        onChange={this.handleNormal}/> Normal
                       </Label>
                       </FormGroup>
 
                       <h5>Les instruments ?</h5>
                   <FormGroup check inline>
                     <Label check>
-                      <Input type="checkbox" /> Drum Kit
+                      <Input type="checkbox" name="instru" id="drumkit" value="drumkit"
+                      checked={this.state.selectedDrumKit}
+                      onChange={this.handleDrumKit}/> Drum Kit
                     </Label>
                     </FormGroup>
                     <FormGroup check inline>
                     <Label check>
-                      <Input type="checkbox" /> Batteries
+                      <Input type="checkbox" name="instru" id="batteries" value="batteries"
+                      checked={this.state.selectedBatteries}
+                      onChange={this.handleBatteries} /> Batteries
                       </Label>
                     </FormGroup>
                     <FormGroup check inline>
                       <Label check>
-                        <Input type="checkbox" /> Rhodes
+                        <Input type="checkbox" name="instru" id="rhodes" value="rhodes"
+                        checked={this.state.selectedRhodes}
+                        onChange={this.handleRhodes}/> Rhodes
                       </Label>
                       </FormGroup>
                       <FormGroup check inline>
                       <Label check>
-                        <Input type="checkbox" /> Piano
+                        <Input type="checkbox" name="instru" id="piano" value="piano"
+                        checked={this.state.selectedPiano}
+                        onChange={this.handlePiano}/> Piano
                         </Label>
                       </FormGroup>
                       <FormGroup check inline>
                         <Label check>
-                          <Input type="checkbox" /> Synth
+                          <Input type="checkbox" name="instru" id="synth" value="synth"
+                          checked={this.state.selectedSynth}
+                          onChange={this.handleSynth}/> Synth
                         </Label>
                         </FormGroup>
                         <FormGroup check inline>
                         <Label check>
-                          <Input type="checkbox" /> Samples
+                          <Input type="checkbox" name="instru" id="samples" value="samples"
+                          checked={this.state.selectedSamples}
+                          onChange={this.handleSamples}/> Samples
                           </Label>
                         </FormGroup>
                         <FormGroup check inline>
                           <Label check>
-                            <Input type="checkbox" /> 808
+                            <Input type="checkbox" name="instru" id="808" value="808"
+                            checked={this.state.selected808}
+                            onChange={this.handle808} /> 808
                           </Label>
                           </FormGroup>
                           <FormGroup check inline>
                           <Label check>
-                            <Input type="checkbox" /> Bass
+                            <Input type="checkbox" name="instru" id="bass" value="bass"
+                            checked={this.state.selectedBass}
+                            onChange={this.handleBass}/> Bass
                             </Label>
                           </FormGroup>
                           <FormGroup check inline>
                             <Label check>
-                              <Input type="checkbox" /> Arp Bells
+                              <Input type="checkbox" name="instru" id="arpbells" value="arpbells"
+                              checked={this.state.selectedArpBells}
+                              onChange={this.handleArpBells}/> Arp Bells
                             </Label>
                             </FormGroup>
                             <FormGroup check inline>
                             <Label check>
-                              <Input type="checkbox" /> Guitare Acoustique
+                              <Input type="checkbox" name="instru" id="acoustic" value="acoustic"
+                              checked={this.state.selectedAcoustic}
+                              onChange={this.handleAcoustic}/> Guitare Acoustique
                               </Label>
                             </FormGroup>
                             <FormGroup check inline>
                               <Label check>
-                                <Input type="checkbox" /> Guitare Électrique
+                                <Input type="checkbox" name="instru" id="electric" value="electric"
+                                checked={this.state.selectedElectric}
+                                onChange={this.handleElectric}/> Guitare Électrique
                               </Label>
                               </FormGroup>
 
