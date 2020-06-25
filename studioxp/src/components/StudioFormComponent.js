@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Col, Container, Form, FormGroup, Label, Input  } from 'reactstrap';
+import AudioPlayer  from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
+
+
+
+var title = "";
+var link = "";
 
 class StudioForm extends Component {
   constructor(props){
@@ -7,10 +14,13 @@ class StudioForm extends Component {
 
     this.state = {
       isModalOpen: false,
+      isModalNestedOpen: false
 
     };
     this.toggleModal = this.toggleModal.bind(this);
-    this.HandleSound = this.HandleSound.bind(this);
+    this.toggleModalNested = this.toggleModalNested.bind(this);
+    this.toggleAll = this.toggleAll.bind(this);
+    this.handleSound = this.handleSound.bind(this);
     this.handleTypeChange = this.handleTypeChange.bind(this);
 
     this.handleTrapChange = this.handleTrapChange.bind(this);
@@ -48,17 +58,61 @@ class StudioForm extends Component {
     });
   }
 
+  toggleModalNested(){
+    this.setState({
+      isModalNestedOpen: !this.state.isModalNestedOpen
+    });
+  }
 
-   HandleSound(evt){
+  toggleAll(){
+    this.setState({
+      isModalOpen: !this.state.isModalOpen,
+      isModalNestedOpen: !this.state.isModalNestedOpen
+    });
+  }
+
+  handleSound(evt){
 
             if (this.state.selectedType === "prod") {
-              alert("attention prod");
+              if (this.state.selectedTrap || this.state.selectedCloud) {
+                  if (this.state.selectedReveur || this.state.selectedTriste) {
+                    link="epilogue.mp3";
+                    title="Epilogue";
+                  }
+              }
+              if (this.state.selectedElectro || this.state.selectedLatino) {
+                  if (this.state.selectedChill || this.state.selectedJoyeux) {
+                    link="caipirinha.mp3";
+                    title="Caïpirinha";
+                  }
+                  else if (this.state.selectedTriste || this.state.selectedReveur) {
+                    link=="isladelsol.mp3";
+                    title=="Isla Del Sol";
+                  }
+              }
+              if (this.state.selectedTrap) {
+                  if (this.state.selectedEnergique || this.state.selectedEnerve) {
+                    link=="east6thst.mp3";
+                    title=="East 6th St.";
+                  }
+              }
+              if (this.state.selectedCloud) {
+                  if (this.state.selectedTriste || this.state.selectedEnerve) {
+                    link=="longitude.mp3";
+                    title=="Longitude";
+                  }
+              }
+              if (this.state.selectedElectro || this.state.selectedHouse) {
+                  if (this.state.selectedJoyeux || this.state.selectedChill || this.state.selectedEnergique) {
+                    link=="cruise.mp3";
+                    title=="Cruise";
+                  }
+              }
+
             }
             else if (this.state.selectedType === "chanson") {
-              alert("attention chanson")
             }
             else if (this.state.selectedType === "both") {
-              alert("attention both")
             }
 
             alert( "Type " + this.state.selectedType +
@@ -88,6 +142,8 @@ class StudioForm extends Component {
             " Acoustic " + this.state.selectedAcoustic +
             " Electric " + this.state.selectedElectric
           );
+
+            alert(link + title);
 
             evt.preventDefault();
 
@@ -120,12 +176,7 @@ class StudioForm extends Component {
             this.setState({selectedElectric: false});
     }
 
-
-    handleTypeChange(evt) {
-  this.setState({
-    selectedType: evt.target.value
-  });
-}
+    handleTypeChange(evt) {this.setState({selectedType: evt.target.value});}
 
     handleTrapChange(evt) {this.setState({selectedTrap: evt.target.checked,});}
     handleCloudChange(evt) {this.setState({selectedCloud: evt.target.checked});}
@@ -159,17 +210,19 @@ class StudioForm extends Component {
 
     return(
       <div>
-        <Button color="dark" size="lg" className="my-5 p-4" onClick={this.toggleModal}>
+
+         <Button color="dark" size="lg" className="my-5 p-4" onClick={this.toggleModal}>
           <h4>Let's go !</h4> <span className="fa fa-headphones fa-lg"></span>
         </Button>
 
         <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-        <Form onSubmit={this.HandleSound}>
+        <Form onSubmit={this.handleSound}>
           <ModalHeader toggle={this.toggleModal}>Choisissez une des catégories</ModalHeader>
           <ModalBody>
 
             <FormGroup tag="fieldset">
             <h5>Tu recherches</h5>
+
                 <FormGroup check>
                   <Label check>
                     <Input type="radio" name="type" id="prod" value="prod"
@@ -370,10 +423,30 @@ class StudioForm extends Component {
 
           </ModalBody>
           <ModalFooter>
-          <Button type="submit" name="lessgo" color="success" onClick={this.toggleModal}>Écoutez</Button>
+          <Button type="submit" name="submit" color="success" onClick={this.toggleModalNested}>Écoutez</Button>
          <Button color="secondary" onClick={this.toggleModal}>Close</Button>
          </ModalFooter>
           </Form>
+          </Modal>
+          <Modal isOpen={this.state.isModalNestedOpen} toggle={this.toggleModalNested}>
+            <ModalHeader>
+              <h5>Vous écoutez : - " {title} " -</h5>
+            </ModalHeader>
+            <ModalBody>
+              <h6>Asseyez-vous confortablement et appréciez</h6>
+              <AudioPlayer
+                    autoPlay
+                    src={link}
+                    onPlay={e => console.log("onPlay")}
+                    // other props here
+                  />
+            </ModalBody>
+
+            <ModalFooter>
+            <Button color="success">Lien</Button>
+           <Button color="secondary" onClick={this.toggleAll}>Close</Button>
+            </ModalFooter>
+
           </Modal>
 
         </div>
