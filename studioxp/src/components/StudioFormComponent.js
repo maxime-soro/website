@@ -118,9 +118,46 @@ class StudioForm extends Component {
 
             link="";
             title="";
+            urlLink="";
+            const numRand= Math.floor(Math.random() * 6);
+
 
             if (this.state.selectedType === "prod" || this.state.selectedType === "both") {
+                if (numRand === 0) {
+                link="east6thst.mp3";
+                title="East 6th St.";
+                urlLink="https://www.youtube.com/watch?v=jL697ntWttg";
+                }
+                else if (numRand === 1) {
+                  link="epilogue.mp3";
+                  title="Epilogue";
+                  urlLink="https://www.youtube.com/watch?v=yvmmI72_M7c"
+                }
+                else if (numRand === 2) {
+                  link="caipirinha.mp3";
+                  title="Caïpirinha";
+                  urlLink="https://www.youtube.com/watch?v=rlu0DEbuOaQ";
+                }
+                else if (numRand === 3) {
+                  link="isladelsol.mp3";
+                  title="Isla Del Sol";
+                  urlLink="https://www.youtube.com/watch?v=Yhxq98k1FFA";
+                }
+                else if (numRand === 4) {
+                  link="longitude.mp3";
+                  title="Longitude";
+                  urlLink="https://www.youtube.com/watch?v=9ZTxx7eAfY0";
+                }
+                else if (numRand === 5) {
+                  link="cruise.mp3";
+                  title="Cruise";
+                  urlLink="https://www.youtube.com/watch?v=_5ZTMR0USyE";
+                }
                 if (this.state.selectedTrap || this.state.selectedCloud) {
+                      link="east6thst.mp3";
+                      title="East 6th St.";
+                      urlLink="https://www.youtube.com/watch?v=jL697ntWttg";
+
                     if (this.state.selectedReveur || this.state.selectedTriste) {
                       link="epilogue.mp3";
                       title="Epilogue";
@@ -165,6 +202,42 @@ class StudioForm extends Component {
 
 
             if (this.state.selectedType === "chanson" || this.state.selectedType === "both") {
+              if (numRand === 0) {
+                link="steel.mp3";
+                title="Steel";
+                urlLink="https://open.spotify.com/track/3FJAhLuXcDZrekBSACh37T?si=nc8HM69xR6SulxPx6dKFxA";
+              }
+              else if (numRand === 1) {
+                link="proud.mp3";
+                title="Proud";
+                urlLink="https://open.spotify.com/track/65bmYk4S1636c1q6t1XgA4?si=g8AxArufTHCJG68v_-qn4A";
+              }
+              else if (numRand === 2) {
+                link="triangle.mp3";
+                title="Triangle";
+                urlLink="https://open.spotify.com/track/4e0uYBiqHliwBdYhyrUJPv?si=SfQnTnIUSuapnLt8u2Y9aw";
+              }
+              else if (numRand === 3) {
+                link="moab.mp3";
+                title="Moab";
+                urlLink="https://open.spotify.com/track/2NlJNPYa4joFdHshpqfx8D?si=FH2XxgUGT6uccDtD5BPwyQ";
+              }
+              else if (numRand === 4) {
+                link="uyuni.mp3";
+                title="Uyuni";
+                urlLink="https://open.spotify.com/track/3Jtl40mdpQ5ELTtDbpMjfI?si=K-giLAGxSEqs3ZJ5vlk-yg";
+                }
+              else if (numRand === 5) {
+                link="833acres.mp3";
+                title="833 Acres";
+                urlLink="https://open.spotify.com/track/2qDKex1fks2C0ltOt8YPym?si=z1xybWDNQyCjs-6pvJ9e5w";
+              }
+                if (this.state.selectedTrap) {
+                  link="steel.mp3";
+                  title="Steel";
+                  urlLink="https://open.spotify.com/track/3FJAhLuXcDZrekBSACh37T?si=nc8HM69xR6SulxPx6dKFxA";
+                }
+
                 if (this.state.selectedTrap || this.state.selectedElectro) {
                   if (this.state.selectedEnergique || this.state.selectedEnerve) {
                       link="steel.mp3";
@@ -185,12 +258,16 @@ class StudioForm extends Component {
                     }
                 }
                 if (this.state.selectedHouse || this.state.selectedElectro) {
+                      link="moab.mp3";
+                      title="Moab";
+                      urlLink="https://open.spotify.com/track/2NlJNPYa4joFdHshpqfx8D?si=FH2XxgUGT6uccDtD5BPwyQ";
+                    }
                   if (this.state.selectedEnergique || this.state.selectedEnerve) {
                       link="moab.mp3";
                       title="Moab";
                       urlLink="https://open.spotify.com/track/2NlJNPYa4joFdHshpqfx8D?si=FH2XxgUGT6uccDtD5BPwyQ";
                     }
-                }
+
                 if (this.state.selectedLatino) {
                   if (this.state.selectedTriste || this.state.selectedChill) {
                       link="uyuni.mp3";
@@ -242,7 +319,7 @@ class StudioForm extends Component {
             " Electric " + this.state.selectedElectric
           );
 
-            alert(link + title);
+            alert(link +" "+ title +" "+ numRand );
 
             evt.preventDefault();
 
