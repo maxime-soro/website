@@ -1,46 +1,65 @@
 import React, { Component } from 'react';
+import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, NavLink } from 'reactstrap';
+
 
 class Header extends Component {
+
+  constructor(props){
+    super(props);
+
+    this.state = {
+      isNavOpen: false,
+    };
+    this.toggleNav = this.toggleNav.bind(this);
+
+  }
+
+  toggleNav(){
+  this.setState({
+    isNavOpen: !this.state.isNavOpen
+  });
+}
+
   render() {
     return (
       <div>
 
-      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <Navbar className="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="home.html">Païsley/Soro Che
-           </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="home.html">Home
+          <NavbarBrand className="navbar-brand" href="home.html">Païsley/Soro Che
+           </NavbarBrand>
+         <NavbarToggler onClick={this.toggleNav} />
+          <Collapse isOpen={this.state.isNavOpen} navbar>
+            <Nav navbar className="navbar-nav ml-auto text-left">
+              <NavItem>
+                <NavLink href="home.html">Home
                   <span class="sr-only">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="releases.html">Releases</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="beats.html">Beats</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="merch.html">Merch</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="studio">Studio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="releases.html">Releases</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="beats.html">Beats</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="merch.html">Merch</NavLink>
+              </NavItem>
+              <NavItem active>
+                <NavLink href="studio">Studio</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="contact.html">Contact</NavLink>
+              </NavItem>
               <br></br>
               <div class="underbar">
               </div>
-            </ul>
-          </div>
+            </Nav>
+            </Collapse>
+
+
         </div>
-      </nav>
+      </Navbar>
 
 
       </div>

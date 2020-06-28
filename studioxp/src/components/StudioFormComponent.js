@@ -403,7 +403,7 @@ class StudioForm extends Component {
 
                 <FormGroup check>
                   <Label check>
-                    <Input type="radio" name="type" id="prod" value="prod"
+                    <Input defaultChecked type="radio" name="type" id="prod" value="prod"
                     checked={this.state.selectedType === 'prod'}
                     onChange={this.handleTypeChange} />{' '}
                     Prod
@@ -413,7 +413,7 @@ class StudioForm extends Component {
                   <Label check>
                     <Input type="radio" name="type" id="chanson" value="chanson"
                       checked={this.state.selectedType === 'chanson'}
-                      onChange={this.handleTypeChange} />{' '}
+                      onChange={this.handleTypeChange}/>{' '}
                     Chanson
                   </Label>
                 </FormGroup>
@@ -434,7 +434,8 @@ class StudioForm extends Component {
               <Label check>
                 <Input type="checkbox" name="style" id="trap" value="trap"
                     checked={this.state.selectedTrap}
-                    onChange={this.handleTrapChange} /> Trap
+                    onChange={this.handleTrapChange}
+                    /> Trap
               </Label>
               </FormGroup>
               <FormGroup check inline>
