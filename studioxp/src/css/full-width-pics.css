@@ -674,6 +674,10 @@ background: #707070;
   margin-right: auto;
 }
 
+.btn:hover{
+  opacity: 0.9;
+}
+
 .button-purple{
   color: rgb(113, 12, 205) !important;
   border-color: rgb(113, 12, 205) !important;
@@ -753,4 +757,26 @@ background: #707070;
 }
 .button-hotyellow:not(:disabled):not(.disabled).active:focus{
   box-shadow: 0 0 0 0.2rem rgba(226, 159, 9, 0.5) !important;
+}
+
+label.custom-control-label{
+  position: relative !important;
+  right: 0.4em !important;
+}
+
+.custom-control-inline{
+  margin-right: 0.4em !important;
+  margin-bottom: 0.3em !important;
+
+}
+
+
+
+.custom-control-label::before{
+  right: 0 !important;
+  display: none !important;
+}
+.custom-control-label::after{
+  right: 0 !important;
+  display: none !important;
 }
