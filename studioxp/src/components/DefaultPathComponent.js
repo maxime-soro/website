@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Switch, Route, Redirect, Router } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Main from './MainComponent';
 import HomePage from './HomePageComponent';
 
@@ -16,7 +16,7 @@ class DefaultPath extends Component {
         <Redirect to="/home"   />
 
       </Switch>
-  
+
 
 
       </div>

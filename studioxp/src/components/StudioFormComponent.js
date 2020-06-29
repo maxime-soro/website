@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Col, Container, Form, FormGroup, Label, Input, FormFeedback, CustomInput  } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import AudioPlayer  from 'react-h5-audio-player';
-import { AvForm, AvField, AvGroup, AvInput, AvFeedback, AvRadioGroup, AvRadio, AvCheckboxGroup, AvCheckbox } from 'availity-reactstrap-validation';
+import { AvForm, AvRadioGroup, AvRadio, AvCheckboxGroup, AvCheckbox } from 'availity-reactstrap-validation';
 import 'react-h5-audio-player/lib/styles.css';
-import { Link } from 'react-router-dom';
+
+
 
 
 var title = "";
@@ -36,6 +37,7 @@ const ModalAudio = ({title, link, urlLink}) => {
        </ModalHeader>
        <ModalBody>
          <h6>Asseyez-vous confortablement et appréciez</h6>
+
          <AudioPlayer
                autoPlay
                src={link}
@@ -125,8 +127,6 @@ class StudioForm extends Component {
             lstMood=[];
             lstStyle=this.state.values.checkboxStyle;
             lstMood=this.state.values.checkboxMood;
-            alert("el testo "  + this.state.values.radioType + "  " + this.state.values.checkboxStyle + "  " + lstMood);
-
 
             if (this.state.values.radioType === "prod" || this.state.radioType === "both") {
                 if (lstStyle.indexOf("trap") !== -1 || lstStyle.indexOf("cloud") !== -1) {
@@ -219,8 +219,6 @@ class StudioForm extends Component {
 
             }
 
-
-            alert(link +" "+ title +" " );
 
             this.setState({selectedType: false});
 
@@ -389,6 +387,7 @@ class StudioForm extends Component {
                         <AvCheckbox className={"btn btn-outline-secondary button-hotyellow " + classNormal } customInput label="Normal" value="normal" onChange={() => this.handleButton(2,6)}/>
                   </AvCheckboxGroup>
 
+
           </ModalBody>
           <ModalFooter>
           <Button type="submit" name="submit" color="success">Écoutez</Button>
@@ -397,7 +396,9 @@ class StudioForm extends Component {
           </AvForm>
           </Modal>
           <Modal isOpen={this.state.isModalNestedOpen} toggle={this.toggleModalNested}>
+
           <ModalAudio title={title} link={link} urlLink={urlLink}/>
+
           <ModalFooter>
           <Button color="secondary" onClick={this.toggleModalNested}>Close</Button>
           </ModalFooter>

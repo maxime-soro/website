@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Button } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import Footer from './FooterComponent';
 import Header from './HeaderComponent';
 import StudioForm from './StudioFormComponent';
-import StudioFormOld from './StudioFormOldComponent';
 import '../css/full-width-pics.css';
 import '../vendor/bootstrap/css/bootstrap.min.css';
 
