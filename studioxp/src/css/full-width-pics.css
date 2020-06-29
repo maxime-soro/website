@@ -712,19 +712,19 @@ background: #707070;
 }
 
 .button-hellred{
-  color: rgb(94, 28, 13) !important;
-  border-color: rgb(94, 28, 13) !important;
+  color: rgb(128, 11, 11) !important;
+  border-color: rgb(128, 11, 11) !important;
 }
 .button-hellred:hover{
-  background-color: rgb(94, 28, 13) !important;
+  background-color: rgb(128, 11, 11) !important;
   color: #fff !important;
 }
 .button-hellred.active{
-  background-color: rgb(94, 28, 13) !important;
+  background-color: rgb(128, 11, 11) !important;
   color: #fff !important;
 }
 .button-hellred:not(:disabled):not(.disabled).active:focus{
-  box-shadow: 0 0 0 0.2rem rgba(94, 28, 13, 0.5) !important;
+  box-shadow: 0 0 0 0.2rem rgba(128, 11, 11, 0.5) !important;
 }
 
 .button-turquoise{
@@ -735,6 +735,7 @@ background: #707070;
   background-color: rgb(55, 209, 177) !important;
   color: #fff !important;
 }
+
 .button-turquoise.active{
   background-color: rgb(55, 209, 177) !important;
   color: #fff !important;
@@ -759,6 +760,7 @@ background: #707070;
   box-shadow: 0 0 0 0.2rem rgba(226, 159, 9, 0.5) !important;
 }
 
+
 label.custom-control-label{
   position: relative !important;
   right: 0.4em !important;
@@ -770,8 +772,6 @@ label.custom-control-label{
 
 }
 
-
-
 .custom-control-label::before{
   right: 0 !important;
   display: none !important;
@@ -779,4 +779,92 @@ label.custom-control-label{
 .custom-control-label::after{
   right: 0 !important;
   display: none !important;
+}
+
+@media(hover: none) {
+
+
+  .btn-outline-primary.active:hover{
+    background-color: #007BFF !important;
+    color: #fff !important;
+  }
+  .btn-outline-primary:hover{
+    background-color: #fff !important;
+    color: #007BFF !important;
+  }
+
+  .btn-outline-secondary.active:hover{
+    background-color: #6c757d !important;
+    color: #fff !important;
+  }
+  .btn-outline-secondary:hover{
+    background-color: #fff !important;
+    color: #6c757d !important;
+  }
+
+  .btn-outline-success.active:hover{
+    background-color: #28a745 !important;
+    color: #fff !important;
+  }
+  .btn-outline-success:hover{
+    background-color: #fff !important;
+    color: #28a745 !important;
+  }
+
+  .btn-outline-info.active:hover{
+    background-color: #17a2b8 !important;
+    color: #fff !important;
+  }
+  .btn-outline-info:hover{
+    background-color: #fff !important;
+    color: #17a2b8 !important;
+  }
+
+  .button-turquoise.active:hover{
+    background-color: rgb(55, 209, 177) !important;
+    color: #fff !important;
+  }
+  .button-turquoise:hover{
+    background-color: #fff !important;
+    color: rgb(55, 209, 177) !important;
+  }
+
+  .button-hellred.active:hover{
+    background-color: rgb(128, 11, 11) !important;
+    color: #fff !important;
+  }
+  .button-hellred:hover{
+    background-color: #fff !important;
+    color: rgb(128, 11, 11) !important;
+  }
+
+  .button-darkblue.active:hover{
+    background-color: rgb(7, 59, 136) !important;
+    color: #fff !important;
+  }
+  .button-darkblue:hover{
+    background-color: #fff !important;
+    color: rgb(7, 59, 136) !important;
+  }
+
+  .button-purple.active:hover{
+    background-color: rgb(113, 12, 205) !important;
+    color: #fff !important;
+  }
+  .button-purple:hover{
+    background-color: #fff !important;
+    color: rgb(113, 12, 205) !important;
+  }
+
+  .button-hotyellow.active:hover{
+    background-color: rgb(226, 159, 9) !important;
+    color: #fff !important;
+  }
+  .button-hotyellow:hover{
+    background-color: #fff !important;
+    color: rgb(226, 159, 9) !important;
+  }
+
+
+
 }

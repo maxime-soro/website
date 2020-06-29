@@ -224,7 +224,7 @@ class StudioForm extends Component {
 
             this.setState({selectedType: false});
 
-        
+
 
 
 
@@ -374,7 +374,7 @@ class StudioForm extends Component {
                       <AvCheckbox className={"btn btn-outline-secondary " + classTrap }  customInput label="Trap" value="trap" onChange={() => this.handleButton(1,0)}/>
                       <AvCheckbox className={"btn btn-outline-info " + classCloud  } customInput label="Cloud" value="cloud" onChange={() => this.handleButton(1,1)}/>
                       <AvCheckbox className={"btn btn-outline-success " + classElectro } customInput label="Electro" value="electro" onChange={() => this.handleButton(1,2)}/>
-                      <AvCheckbox className={"btn btn-outline-warning " + classHouse } customInput label="House" value="house" onChange={() => this.handleButton(1,3)}/>
+                      <AvCheckbox className={"btn btn-outline-info button-hotyellow " + classHouse } customInput label="House" value="house" onChange={() => this.handleButton(1,3)}/>
                       <AvCheckbox className={"btn btn-outline-info button-hellred " + classLatino } customInput label="Latino" value="latino" onChange={() => this.handleButton(1,4)}/>
                 </AvCheckboxGroup>
 
@@ -384,7 +384,7 @@ class StudioForm extends Component {
                         <AvCheckbox className={"btn btn-outline-primary " + classEnergique } customInput label="Énergique" value="energique" onChange={() => this.handleButton(2,1)}/>
                         <AvCheckbox className={"btn btn-outline-success " + classJoyeux } customInput label="Joyeux" value="joyeux" onChange={() => this.handleButton(2,2)}/>
                         <AvCheckbox className={"btn btn-outline-secondary button-darkblue " + classTriste } customInput label="Triste" value="triste" onChange={() => this.handleButton(2,3)}/>
-                        <AvCheckbox className={"btn btn-outline-danger " + classEnerve } customInput label="Énervé" value="enerve" onChange={() => this.handleButton(2,4)}/>
+                        <AvCheckbox className={"btn btn-outline-info button-hellred " + classEnerve } customInput label="Énervé" value="enerve" onChange={() => this.handleButton(2,4)}/>
                         <AvCheckbox className={"btn btn-outline-secondary button-purple " + classReveur } customInput label="Rêveur" value="reveur" onChange={() => this.handleButton(2,5)}/>
                         <AvCheckbox className={"btn btn-outline-secondary button-hotyellow " + classNormal } customInput label="Normal" value="normal" onChange={() => this.handleButton(2,6)}/>
                   </AvCheckboxGroup>
