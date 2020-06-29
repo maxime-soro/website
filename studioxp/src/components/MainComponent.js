@@ -29,7 +29,6 @@ class Main extends Component {
 
         <Col xs="12" className="">
           <StudioForm />
-          <StudioFormOld />
 
         </Col>
 
