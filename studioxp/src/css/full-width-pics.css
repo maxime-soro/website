@@ -763,12 +763,14 @@ background: #707070;
 
 label.custom-control-label{
   position: relative !important;
-  right: 0.4em !important;
+  /* right: 0.4em !important; */
+  padding: 0.5em 1em !important;
 }
 
 .custom-control-inline{
   margin-right: 0.4em !important;
   margin-bottom: 0.3em !important;
+  padding: 0em !important;
 
 }
 
